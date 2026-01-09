@@ -1,5 +1,7 @@
 # Sales Regression Pipeline
 
+![CI](https://github.com/vincent4u/sales_regression_pipeline/actions/workflows/ci.yml/badge.svg)
+
 A comprehensive **end-to-end data analytics and machine learning pipeline** utilizing the **Superstore Sales dataset** from Kaggle. This project illustrates the **entire data lifecycle**, encompassing data ingestion, cleaning, visualization, model training, and evaluation.
 
 ## Project Overview
