@@ -29,7 +29,7 @@ def run_script(script_path):
 # List of scripts in order
 scripts = [
     "scripts/01_data_ingestion.py",       # Download & save dataset
-    "scripts/02_etl_transformation.py",  # Clean & transform data
+    "scripts/etl_transformation.py",  # Clean & transform data
     "scripts/03_analytics_visualization.py",  # EDA plots
     "scripts/04_ml_model.py"             # Train & save regression model
 ]
