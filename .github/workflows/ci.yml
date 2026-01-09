@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Checkout the repo
+    # 1. Checkout repository
     - name: Checkout repository
       uses: actions/checkout@v3
 
@@ -28,15 +28,22 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    # 4. Show repo structure (optional, for debugging)
+    # 4. Set Kaggle API credentials (from GitHub Secrets)
+    - name: Set up Kaggle API credentials
+      run: |
+        mkdir -p ~/.kaggle
+        echo "{\"username\":\"${{ secrets.KAGGLE_USERNAME }}\",\"key\":\"${{ secrets.KAGGLE_KEY }}\"}" > ~/.kaggle/kaggle.json
+        chmod 600 ~/.kaggle/kaggle.json
+
+    # 5. Debug: Show repo structure (optional)
     - name: Show files in repo
       run: ls -R
 
-    # 5. Run the full pipeline
+    # 6. Run full pipeline
     - name: Run Sales Regression Pipeline
       run: python scripts/run_pipeline.py
 
-    # 6. Run tests
+    # 7. Run unit tests
     - name: Run unit tests
       run: |
         python -m pytest --maxfail=1 --disable-warnings -v
