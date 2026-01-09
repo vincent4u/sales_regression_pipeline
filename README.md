@@ -1,7 +1,5 @@
 # Sales Regression Pipeline
 
-# Sales Regression Pipeline
-
 [![CI](https://github.com/vincent4u/sales_regression_pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/vincent4u/sales_regression_pipeline/actions)
 
 
