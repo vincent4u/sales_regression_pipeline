@@ -1,8 +1,10 @@
 """
 run_pipeline.py
 ----------------
-Orchestrates the full Sales Regression Project pipeline:
-1. Data ingestion
+Orchestrates the Sales Regression Project pipeline.
+
+Pipeline steps:
+1. Data ingestion (skipped in CI)
 2. ETL / Transformation
 3. Analytics / Visualization
 4. Machine Learning (Regression)
@@ -10,6 +12,8 @@ Orchestrates the full Sales Regression Project pipeline:
 
 import subprocess
 import sys
+import os
+
 
 def run_script(script_path):
     """Run a Python script and stop pipeline if it fails."""
@@ -21,16 +25,27 @@ def run_script(script_path):
         print(f"Error running {script_path}: {e}")
         sys.exit(1)
 
-# List all scripts in order
-scripts = [
-    "scripts/01_data_ingestion.py",
+
+# Detect CI environment
+IS_CI = os.getenv("CI", "false").lower() == "true"
+
+# Define pipeline steps
+scripts = []
+
+if not IS_CI:
+    print("Running FULL pipeline (including data ingestion)")
+    scripts.append("scripts/01_data_ingestion.py")
+else:
+    print("Running CI pipeline (skipping data ingestion)")
+
+scripts.extend([
     "scripts/02_etl_transformation.py",
     "scripts/03_analytics_visualization.py",
-    "scripts/04_ml_model.py"
-]
+    "scripts/04_ml_model.py",
+])
 
-# Run each script
+# Run pipeline
 for script in scripts:
     run_script(script)
 
-print("\n=== Full Sales Regression Pipeline Completed Successfully ===")
+print("\n=== Sales Regression Pipeline Completed Successfully ===")
