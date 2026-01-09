@@ -118,21 +118,3 @@ python scripts/run_pipeline.py
 ## License
 
 This project is for educational and portfolio purposes.
-```
-
-### Usage
-
-You can copy this entire block into your Python script to write the README content into a `README.md` file:
-
-```python
-readme_content = """
-... (copy the markdown content here) ...
-"""
-
-with open("README.md", "w", encoding="utf-8") as f:
-    f.write(readme_content)
-
-print("README.md has been created successfully!")
-```
-
-This will generate a complete and well-structured README file in your project directory.
