@@ -1,0 +1,64 @@
+# -------------------------------
+# Python cache and compiled files
+# -------------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# -------------------------------
+# Virtual environments
+# -------------------------------
+venv/
+.env/
+.env.*
+.venv/
+
+# -------------------------------
+# Data folders (skip large/raw files)
+# -------------------------------
+data/raw/
+data/processed/
+
+# -------------------------------
+# Models (skip trained model files)
+# -------------------------------
+models/
+
+# -------------------------------
+# Images / plots / generated files
+# -------------------------------
+images/
+
+# -------------------------------
+# Kaggle API credentials
+# -------------------------------
+.kaggle/kaggle.json
+
+# -------------------------------
+# OS-specific files
+# -------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------------
+# IDE / Editor settings
+# -------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# -------------------------------
+# Logs
+# -------------------------------
+*.log
+
+# -------------------------------
+# Temporary / backup files
+# -------------------------------
+*.bak
+*.tmp
+*.swp
